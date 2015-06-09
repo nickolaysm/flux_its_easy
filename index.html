@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="utf-8">
+
+		<title>Flux - это еще проще чем React</title>
+
+		<meta name="description" content="Что такое флюкс и с чем его едят в картинках.">
+		<meta name="author" content="Николай Смирнов">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="lib/css/reveal.css">
+		
+		<!--link rel="stylesheet" href="lib/css/theme/blood.css" id="theme"-->
+		<link rel="stylesheet" href="lib/css/theme/serif.css" id="theme">
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+</head>
+<body>
+
+	<div class="reveal">
+		<div class="slides">
+			<!-- Заголовок -->
+			<section>
+				<h1>Flux</h1>
+				<p>еще проще чем ReactJS</p>
+				<p>
+					<small>Николай Смирнов / <a href="http://twitter.com/nickolaysm">@nickolaysm</a></small>
+				</p>
+			</section>		
+
+			<!-- План -->			
+			<section>
+				<h2>Требования к слушателю</h2>
+				<p>Нужно хотя бы понимать ReactJS</p>
+				<p>Желательно иметь опыт реализации</p>
+			</section>		
+
+			<!-- План -->			
+			<section>
+				<h1>План</h1>
+				<ul>
+					<li>Что такое Flux</li>
+					<li>Решаемые задачи</li>
+					<li>Разбор на примере</li>
+					<li>Будущее</li>
+				</ul>
+			</section>		
+
+			<!-- О Flux -->			
+			<section>
+				<h2>О Flux</h2>
+				<p> Бытует мнение, что Flux не самая простая идея.</p>
+					<p> Хе-хе</p>
+					<p> Бред какой-то</p>
+					<p> Flux - это очень просто и эффективно</p>
+					<p> Нужно только слегка моск подкорректировать</p>
+			</section>		
+
+			<!-- Что такое Flux -->			
+			<section>
+				<h2>Что такое Flux</h2>
+				<p>Это не:
+					<ul>
+						<li>технология</li>
+						<li>фреймворк</li>
+						<li>библиотека</li>
+						<li>...</li>
+					</ul>
+				</p>
+				<p>Это чистый разум - паттерн</p>
+				<p>
+					<small>Предложен фейсбуком</small>
+				</p>
+			</section>		
+
+			<!-- Чего нет в ReactJS -->			
+			<section>
+				<h2>Чего нет в ReactJS</h2>
+				<p>Да почти ничего нет!!!</p>
+				<p>Есть только <br/><strong>мегамощный</strong> <br/><strong>и мегапростой</strong> <br/>инструмент для отрисовки интерфейсов, т.е. view</p>
+				<p>
+					<small>Что уже не мало!</small>
+				</p>
+			</section>	
+
+			<!-- Но оказалось -->			
+			<section>
+				<h2>Но оказалось...</h2>
+				<p>Под ReactJS очень красиво ложатся реактивные</p>
+				<p>
+					<small>кто бы сомневался</small>
+				</p>
+				<p>
+					и функциональные подходы, паттерны, способы разработки
+				</p>
+			</section>	
+
+			<!-- Мой опыт -->			
+			<section>
+				<h2>А как по мне так...</h2>
+				<p>только и можно разрабатывать интерфейсы.</p>
+				<p>Все эти MVC, MVP подогнанные под императивные языки - очень УБОГИ</p>
+				<br/><br/><br/>
+				<p>
+					<small>ваще ИМХО, т.е. совсем ИМХО</small>
+				</p>
+
+			</section>	
+
+			<!-- зачем же FLUX -->			
+			<section>
+				<h2>Отвлеклись, зачем же FLUX???</h2>
+				<p></p>
+			</section>
+
+			<!-- Решаемые задачи -->			
+			<section>
+				<h2>Решаемые задачи</h2>
+				<p>Грамотная работа с данными</p>
+				<br/><br/>
+				<p>
+					<small>* данные в ReactJS это все - поведение, изменение, внешний вид</small>
+				</p>
+			</section>
+
+			<!-- А именно -->			
+			<section>
+				<h2>А именно</h2>
+				<ul>
+					<li>Убираем безумной глубины колбеки, при большой вложенности компонентов</li>
+					<li>Распространяем данные в компоненты на разных ветках и на разных глубинах</li>
+					<li>Выносим пользовательское поведение</li>
+					<li>Получаем хранилище данных</li>
+				</ul>
+			</section>
+			
+			<!-- Картинка -->			
+			<section>
+				<h2>Внимание - трафик</h2>
+				<img width="700px" src="img/flux_simple.png"/>
+			    <aside class="notes">
+			        Картинка примитивная и из нее особо ничего не понятно.
+			        Но можно осознать несколько важных моментов.
+			        1) Все крутится по циклу, без возвратов в обратном направлении. Все - это что? Ну наверно данные, раз уж это React
+			        2) Только из Action - осуществляется взаимодействие с внешним API
+			        3) Квадратик с View - это и есть react компонент
+			        4) Action - это обработчики пользовательских действий, вынесенные из компонента
+			        5) Dispatcher - осуществляет регистрацию событий и вызов подписчиков
+			        6) Store - только хранит данные.
+			    </aside>				
+			</section>
+
+			<!-- View -->			
+			<section>
+				<h2>View</h2>
+				<p>Список сотрудников с фильтрацией</p>
+				<img width="570px" src="img\userlist.png"></img>
+			</section>
+
+			<!-- Action -->
+			<section>
+				<h2>Action</h2>
+				<ul>
+					<li>Фильтрация списка пользователей - функция</li>
+					<li>Если работает локально - возвращает отфильтрованный список</li>
+					<li>Если обращается на сервер - возвращает Promise</li>
+					<li>По выполнению бросается событие, через Dispatcher</li>
+				</ul>
+			</section>
+
+			<!-- Dispatcher -->
+			<section>
+				<h2>Dispatcher</h2>
+				<p>Нужен для централизации всех событий и подписчиков</p>
+			</section>
+
+			<!-- Store -->
+			<section>
+				<h2>Store</h2>
+				<ul>
+					<li>Подписывается на результат выполнения action - "Фильтрация списка пользователей"</li>
+					<li>Сохраняет в себе новый список сотрудников</li>
+					<li>Бросает событие на свое изменение (Не через Dispatcher)</li>
+					<li>Предоставляет API для доступа к данным</li>
+				</ul>
+			</section>
+
+			<!-- View -->			
+			<section>
+				<h2>View</h2>
+				<ul>
+					<li>Подписывается на изменение в Store</li>
+					<li>Запрашивает от Store свое новое состояние</li>
+					<li>Перерисовывается</li>
+				</ul>
+			</section>
+
+			<!-- Картинка 2 -->			
+			<section>
+				<h2>Картинка 2</h2>
+				<img width="700px" src="img\flux_full.png"></img>
+			</section>
+			<!--Готовые реализации-->
+			<section>
+				<h2>Готовые реализации</h2>
+				<ul>
+					<li>Dispatcher от facebook + microevent.js + vanilla.js</li>
+					<li>yahoo/fluxible</li>
+					<li>refluxjs</li>
+					<li><strong>flummox</strong></li>
+				</ul>
+			</section>
+
+			<!--Пример на Flummox-->
+			<section>
+				<h2>Пример на Flummox</h2>
+				Есть три компонента:
+				<ul>
+					<li>Список сотрудников</li>
+					<li>Отображалка кол-ва выводимых сотрудников</li>
+					<li>Фильтр</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Примерно так</h2>
+				<img width="900px" src="img\view.png"></img>
+			</section>
+
+			<!--Action-->
+			<section>
+				<h2>Action</h2>
+				Зададим все пользовательские действия:
+				<pre><code class="javascript" data-trim contenteditable style="font-size: 22px;">
+import { Actions } from 'flummox';
+class ActionEmployee extends Actions {
+	filter(filter){
+		return ... Можно вернуть значения или Promise
+	}
+	loadEmployee(id){
+		return ... Можно вернуть значения или Promise
+	}
+	saveEmployee(employee){
+		return ... Можно вернуть значения или Promise
+	}
+}
+				</code></pre>
+			</section>
+
+			<!--Store-->
+			<section>
+				<h2>Store</h2>
+				Зададим все пользовательские действия:
+				<pre><code class="javascript" data-trim contenteditable style="font-size: 22px;">
+import { Store } from 'flummox';
+class StoreEmployee extends Store {
+	constructor(flux) {
+		super();
+		const actions = flux.getActions('action');
+		this.register(actions.filter, this.handleFilter);
+		this.state = { employees : [] };
+	}
+	handleFilter(message) {
+		console.log("handleFilter", message);
+		this.setState({
+			employees : message
+		});
+	}
+}
+				</code></pre>
+			</section>
+
+			<!--Инициализация Flux-->
+			<section>
+				<h2>Инициализация Flux</h2>
+				<pre><code class="javascript" data-trim contenteditable style="font-size: 22px;">
+import {Flux}  from 'flummox';
+import FluxComponent from 'flummox/component';
+import ActionEmployee from "./Action.jsx";
+import ApplicationStore from "./Store.jsx";
+class ApplicationFlux extends Flux {
+	constructor() {
+	    super();
+	    this.createActions('action', ActionEmployee);
+	    this.createStore('store', ApplicationStore, this);
+	}
+}
+				</code></pre>
+			</section>
+
+			<!--Обертка Flux-->
+			<section>
+				<h2>Обертка</h2>
+				<pre><code data-trim contenteditable style="font-size: 22px;">
+import React from 'react';
+import FluxComponent from 'flummox/component';
+import flux from './app.jsx'
+class View extends React.Component {
+  render() {return ( 
+    <div>    
+      &lt;FluxComponent  flux={flux} connectToStores={['store']}>
+        &lt;ViewEmployeeCounter/&gt;
+      &lt;/FluxComponent>
+
+      &lt;FluxComponent  flux={flux} connectToStores={['store']}>
+        &lt;ViewEmployeesFilter/>
+        &lt;ViewEmployees/>
+      &lt;/FluxComponent>
+    </div>);}
+}
+				</code></pre>
+			</section>
+
+			<!--Список пользователей View-->
+			<section>
+				<h2>Список пользователей</h2>
+				<pre><code data-trim contenteditable style="font-size: 22px;">
+import React from 'react';
+var ViewEmployees = React.createClass({
+  load  : function(){ 
+  	this.props.flux.getActions('action').filter(); 
+  },
+  render: function() {
+    var emps = this.props.employees.map(function(item){ 
+      return(&lt;div key={item.uuid}> {item.name} &lt;/div>) 
+    });
+    return (
+      &lt;div className="grid">
+        &lt;div onClick={this.load}>Показать Сотрудников&lt;/div>
+        {emps}
+      &lt;/div>)
+  }
+ ...
+				</code></pre>
+			</section>
+
+			<!--количество выводимых сейчас пользователей-->
+			<section>
+				<h2>Количество сотрудников</h2>
+				<pre><code data-trim contenteditable style="font-size: 22px;">
+var ViewEmployeeCounter = React.createClass({
+  render: function() {
+    console.log("ViewEmployeeCounter");
+    return (
+      <div> 
+        &lt;span>{this.props.employees.length}&lt;/span>
+      </div>
+    );
+  }
+})
+				</code></pre>
+			</section>
+
+			<!--Фильтр-->
+			<section>
+				<h2>Фильтр</h2>
+				<pre><code data-trim contenteditable style="font-size: 22px;">
+var ViewEmployeesFilter = React.createClass({
+  keyPress: function(event) {
+  if(event.keyCode == 13)
+      this.props.flux.getActions('action')
+          .filter({text: event.target.value});
+  },
+  render: function() {
+    console.log("ViewEmployeesFilter");
+    return (
+        <div>
+            <span>Фильтр:</span>
+            &lt;input type="text" onKeyUp={this.keyPress}/> 
+        </div>
+    );
+  }...
+
+				</code></pre>
+			</section>
+
+			<!-- Развитие -->
+			<section>
+				<h2>Литература</h2>
+				<p>
+					Flux для глупых людей - http://habrahabr.ru/post/249279/ </li>
+				</p>
+				<p><small>более чем достаточно</small></p>
+			</section>
+
+			<!-- Развитие -->
+			<section>
+				<h1>Усё</h1>
+			</section>
+
+		</div>
+	</div>
+
+
+
+	<script src="lib/lib/js/head.min.js"></script>
+	<script src="lib/js/reveal.js"></script>
+
+	<script>
+
+		// Full list of configuration options available at:
+		// https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+
+			transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+			// Optional reveal.js plugins
+			dependencies: [
+				{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+				{ src: 'plugin/zoom-js/zoom.js', async: true },
+				{ src: 'plugin/notes/notes.js', async: true }
+			]
+		});
+
+	</script>
+</body>
+</html>

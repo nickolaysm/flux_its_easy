@@ -1,0 +1,78 @@
+<mockup version="1.0" skin="sketch" measuredW="1166" measuredH="425" mockupW="441" mockupH="390">
+  <controls>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::TextInput" x="725" y="38" w="385" h="-1" measuredW="59" measuredH="29" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%u0418%u0432%u0430%u043D%u043E%u0432</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::Button" x="1118" y="35" w="-1" h="-1" measuredW="48" measuredH="33" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>SearchIcon%7Csmall</icon>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Canvas" x="726" y="88" w="440" h="102" measuredW="100" measuredH="70" zOrder="2" locked="false" isInGroup="-1"/>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="817" y="101" w="-1" h="-1" measuredW="154" measuredH="25" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%u0418%u0432%u0430%u043D%u043E%u0432%20%u0418%u0432%u0430%u043D%20%u0418%u0432%u0430%u043D%u043E%u0432%u0438%u0447</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::Label" x="819" y="127" w="-1" h="-1" measuredW="64" measuredH="25" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%u0414%u0438%u0440%u0435%u043A%u0442%u043E%u0440</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Label" x="819" y="152" w="-1" h="-1" measuredW="128" measuredH="25" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%u0414%u0435%u0442%u0441%u043A%u0438%u0439%20%u0441%u0430%u0434%20%u2116%2017</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::Icon" x="737" y="113" w="-1" h="-1" measuredW="48" measuredH="48" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>EmoticonIcon%7Clarge</icon>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::Canvas" x="725" y="205" w="440" h="102" measuredW="100" measuredH="70" zOrder="7" locked="false" isInGroup="-1"/>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::Label" x="816" y="218" w="-1" h="-1" measuredW="157" measuredH="25" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%u041F%u0435%u0442%u0440%u043E%u0432%20%u041F%u0435%u0442%u0440%20%u041F%u0435%u0442%u0440%u043E%u0432%u0438%u0447</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Label" x="818" y="244" w="-1" h="-1" measuredW="67" measuredH="25" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%u0413%u043B%u0430%u0432.%20%u0431%u0443%u0445</text>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::Label" x="818" y="269" w="-1" h="-1" measuredW="134" measuredH="25" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%u041F%u0422%u0423%20%u0438%u043C.%20%u0421%u0442%u0430%u0445%u0430%u043D%u043E%u0432%u0430</text>
+      </controlProperties>
+    </control>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::Icon" x="736" y="230" w="-1" h="-1" measuredW="48" measuredH="48" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>SadFaceIcon%7Clarge</icon>
+      </controlProperties>
+    </control>
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::Canvas" x="725" y="323" w="440" h="102" measuredW="100" measuredH="70" zOrder="12" locked="false" isInGroup="-1"/>
+    <control controlID="15" controlTypeID="com.balsamiq.mockups::Label" x="816" y="336" w="-1" h="-1" measuredW="170" measuredH="25" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%u0421%u0438%u0434%u043E%u0440%u043E%u0432%20%u0421%u0438%u0434%u0440%20%u0421%u0438%u0434%u043E%u0440%u043E%u0432%u0438%u0447</text>
+      </controlProperties>
+    </control>
+    <control controlID="16" controlTypeID="com.balsamiq.mockups::Label" x="818" y="362" w="-1" h="-1" measuredW="110" measuredH="25" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%u0413%u043B%u0430%u0432%u043D%u044B%u0439%20%u0441%u0442%u043E%u0440%u043E%u0436</text>
+      </controlProperties>
+    </control>
+    <control controlID="17" controlTypeID="com.balsamiq.mockups::Label" x="818" y="387" w="-1" h="-1" measuredW="56" measuredH="25" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%u041C%u0413%u0418%u041C%u041E</text>
+      </controlProperties>
+    </control>
+    <control controlID="18" controlTypeID="com.balsamiq.mockups::Icon" x="736" y="348" w="-1" h="-1" measuredW="48" measuredH="48" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>RedditIcon%7Clarge</icon>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
