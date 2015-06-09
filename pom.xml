@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
+    <properties>
+        <nodeVersion>v0.11.13</nodeVersion>
+        <npmVersion>1.4.21</npmVersion>
+        <nodeDownloadRoot>http://ntp-vm-local-npm-proxy.krista.ru/</nodeDownloadRoot>
+        <npmRegistryUrl>http://ntp-vm-local-npm-proxy.krista.ru:4873</npmRegistryUrl>
+        <npmDownloadRoot>${npmRegistryUrl}/npm/-/</npmDownloadRoot>
+    </properties>
+
+    <groupId>ru.krista.core.portal</groupId>
+    <artifactId>portal-frontend</artifactId>
+    <version>0.0.1-SNAPSHOT</version>    
+    <name>ru.krista.core.portal:portal-frontend</name>    
+
+
+    <profiles>
+        <profile>
+            <id>frontend</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.github.eirslett</groupId>
+                        <artifactId>frontend-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>install node and npm</id>
+                                <goals>
+                                    <goal>install-node-and-npm</goal>
+                                </goals>
+                                <configuration>
+                                    <nodeVersion>${nodeVersion}</nodeVersion>
+                                    <npmVersion>${npmVersion}</npmVersion>
+                                    <downloadRoot>${nodeDownloadRoot}</downloadRoot>
+                                    <npmDownloadRoot>${npmDownloadRoot}</npmDownloadRoot>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>npm install</id>
+                                <goals>
+                                    <goal>npm</goal>
+                                </goals>
+                                <configuration>
+                                    <arguments>install --registry ${npmRegistryUrl}</arguments>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>grunt build</id>
+                                <goals>
+                                    <goal>grunt</goal>
+                                </goals>
+                                <configuration>
+                                    <arguments>--no-color</arguments>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+
+</project>

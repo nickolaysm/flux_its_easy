@@ -1,0 +1,30 @@
+{
+  "name": "flux_simple_example_flummox",
+  "description": "Simple flux example using flummox",
+  "version": "0.0.1",
+  "devDependencies": {
+    "grunt": "~0.4.0",
+    "grunt-cli": "~0.1.9",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-browserify": "~3.3.0",
+    "browserify-replace":"~0.9.0",
+
+    "time-grunt" : "~1.1.0",
+    "jit-grunt"  : "~0.9.1",
+
+    "babelify": "~6.0.2",
+    "uglifyify": "~3.0.1",
+    "browserify-shim": "~3.8.0",
+    "underscore": "^1.7.0",
+    "react": "~0.13.2",
+    "react-bootstrap": "^0.22.4",
+    "bootstrap":"~3.3.4",
+    "flummox":"^3.5.2"
+  },
+  "peerDependencies": {
+    "react": "^0.13.2",
+    "react-bootstrap": "^0.22.4",
+    "underscore": "^1.7.0"
+  },
+  "browserify-shim":{}
+}
