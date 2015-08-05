@@ -1,0 +1,7 @@
+docblockr
+find-selection
+jumpy
+last-cursor-position
+linter
+pain-split
+preview
