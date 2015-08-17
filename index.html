@@ -14,11 +14,17 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="lib/css/reveal.css">
-		
+
 		<!--link rel="stylesheet" href="lib/css/theme/blood.css" id="theme"-->
 		<link rel="stylesheet" href="lib/css/theme/serif.css" id="theme">
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/lib/css/zenburn.css">
+		<style>
+		.reveal section img{
+			border:0px;
+			box-shadow: 0 0 0 0;
+		}
+		</style>
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -40,43 +46,162 @@
 			<!-- Заголовок -->
 			<section>
 				<h1>Flux</h1>
-				<p>еще проще чем ReactJS</p>
+				<p>Что это? Зачем это? Как это?</p>
 				<p>
 					<small>Николай Смирнов / <a href="http://twitter.com/nickolaysm">@nickolaysm</a></small>
 				</p>
-			</section>		
+			</section>
 
-			<!-- План -->			
-			<section>
+			<!-- План -->
+			<section class="present">
 				<h2>Требования к слушателю</h2>
-				<p>Нужно хотя бы понимать ReactJS</p>
-				<p>Желательно иметь опыт реализации</p>
-			</section>		
+				<p>Понимать принципов ReactJS
+				 Желательно иметь опыт реализации</p>
+			</section>
 
-			<!-- План -->			
+			<!-- План -->
 			<section>
 				<h1>План</h1>
 				<ul>
-					<li>Что такое Flux</li>
-					<li>Решаемые задачи</li>
-					<li>Разбор на примере</li>
-					<li>Будущее</li>
+					<li>Немного о ReactJS. Зачем нужен Flux?</li>
+					<li>Flux - не MVC. Архитектура. Плюшки</li>
+					<li>Немного философии, почему react + flux это хорошо</li>
 				</ul>
-			</section>		
+			</section>
 
-			<!-- О Flux -->			
 			<section>
-				<h2>О Flux</h2>
-				<p> Бытует мнение, что Flux не самая простая идея.</p>
-					<p> Хе-хе</p>
-					<p> Бред какой-то</p>
+				<h2>Пять стадий принятия React</h2>
+				<ul>
+					<li>Отрицание</li>
+					<li>Гнев</li>
+					<li>Торг</li>
+  					<li>Депрессия</li>
+					<li>Принятие</li>
+				</ul>
+   		</section>
+
+			<section>
+				<h2>Отрицание</h2>
+				<ul>
+					<li> Я ищу крутую библиотеку, что бы быстро и гибко создавать клиента/компоненты под веб.</li>
+					<li> Да их тут свалка целая, но есть явные лидеры.</li>
+					<li> <p>React? Что?! Бред какой-то, это не может работать. Даже пробовать не буду.</p> </li>
+				</ul>
+   		</section>
+
+			<section>
+				<h2>Гнев</h2>
+				<ul>
+					<li> Да «либы» крутые, много что могут. Но как же долго в них въезжать. </li>
+					<li> Все есть, но тратишь кучу времени для поиска решения. </li>
+					<li> Тяжко разрабатывать. </li>
+					<li> Нет щасья в жизни. </li>
+				</ul>
+   		</section>
+
+			<section>
+				<h2>Торг</h2>
+				<ul>
+					<li> Может reactJS глянем? </li>
+					<li> Это не может работать. Да и полезность сомнительная. </li>
+					<li> Вот если получиться за пол часика пример своять, то попробую. </li>
+					<li> Ха. Вроде все простенько так и понятненько. </li>
+				</ul>
+   		</section>
+
+			<section>
+				<h2>Депрессию пропускаем :)</h2>
+				<ul>
+					<li> Делаем маленький компонент. </li>
+					<li> Ха! Работает. И вроде не сложно и удобно. </li>
+					<li> Нет ощущения, что кирпичи таскаешь, как раньше. </li>
+					<li> Сделаем компонент побольше. </li>
+				</ul>
+   		</section>
+
+			<section>
+				<h2>Принятие</h2>
+				<ul>
+					<li> Тоже работает! </li>
+					<li> И делаешь на одном дыхании. </li>
+					<li> Хотя не хватает элегантности, надо что-то сделать с колбеками. </li>
+					<li> Их много, ну да пока терпимо, подумаем потом. </li>
+				</ul>
+   		</section>
+
+			<section>
+				<h2>Прошло пол года</h2>
+				<p>Эйфория!
+				<br/>Где я?
+				<br/>React повсюду?!
+ 			  <br/>Уже переписываем то что и так хорошо работает!
+				</p>
+				<p>
+				Это ж ВИРУС!!!
+				</p>
+   		</section>
+
+			<section>
+				<h3>А не пора ли нам замахнуться на…</h3>
+				<img width="80%" data-src="img/sheakespeare.jpg"/>
+			</section>
+
+			<section>
+				<h3>Сделаем приложение полностью на react</h3>
+				<ul>
+					<li> А как? Уже на большом компоненте было много колбеков </li>
+					<li> Заменить модель на бекбон? Чего-то не хочется. </li>
+					<li> Все эти angular, backbone, ember  -  бесовские поделки. </li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Что делать?</h3>
+				<p>Ищем ближайшего админа, забираем бубен!</p>
+				<img width="80%" data-src="img/wizard2.jpg"/>
+				<p>Взываем к фейсбуку!!!</p>
+			</section>
+
+			<section>
+				<h3>Flux?</h3>
+				<p>Что за зверь?! Вот бы библиотеку дать, так нет. <br/>На! Получай паттерн.</p>
+				<small>
+				<p>«Ты ж пытливый ум, держи игрушку» @Фейсбук
+					<br/>(мне кажется, они так думают)
+				</p>
+			</small>
+			</section>
+
+			<!-- О Flux -->
+			<section>
+				<h3>О Flux</h3>
+				  <p> Бытует мнение, что Flux не самая простая идея.</p>
+					<p> </p>
+					<p> Бред, конечно</p>
 					<p> Flux - это очень просто и эффективно</p>
-					<p> Нужно только слегка моск подкорректировать</p>
-			</section>		
+					<small>
+						<p> Нужно только слегка моск подкорректировать</p>
+				</small>
+			</section>
 
-			<!-- Что такое Flux -->			
+			<!-- О Flux -->
 			<section>
-				<h2>Что такое Flux</h2>
+				<h3>Что такое Flux</h3>
+				  <p>По началу, что бы понять Flux каждый делал свою реализацию.
+						Поэтому на github их не счесть.
+						Сейчас, конечно в этом необходимость отпала.
+						Много хороших реализаций и подробных статей.</p>
+					<br/>
+					<strong><p>Flux для глупых людей:</p></strong>
+					<p> http://habrahabr.ru/post/249279/</p>
+			</section>
+
+			<!-- Так что же такое Flux? -->
+			<section>
+				<h1>Так что же такое Flux?</h1>
+			</section>
+
+			<section>
 				<p>Это не:
 					<ul>
 						<li>технология</li>
@@ -89,163 +214,145 @@
 				<p>
 					<small>Предложен фейсбуком</small>
 				</p>
-			</section>		
-
-			<!-- Чего нет в ReactJS -->			
-			<section>
-				<h2>Чего нет в ReactJS</h2>
-				<p>Да почти ничего нет!!!</p>
-				<p>Есть только <br/><strong>мегамощный</strong> <br/><strong>и мегапростой</strong> <br/>инструмент для отрисовки интерфейсов, т.е. view</p>
-				<p>
-					<small>Что уже не мало!</small>
-				</p>
-			</section>	
-
-			<!-- Но оказалось -->			
-			<section>
-				<h2>Но оказалось...</h2>
-				<p>Под ReactJS очень красиво ложатся реактивные</p>
-				<p>
-					<small>кто бы сомневался</small>
-				</p>
-				<p>
-					и функциональные подходы, паттерны, способы разработки
-				</p>
-			</section>	
-
-			<!-- Мой опыт -->			
-			<section>
-				<h2>А как по мне так...</h2>
-				<p>только и можно разрабатывать интерфейсы.</p>
-				<p>Все эти MVC, MVP подогнанные под императивные языки - очень УБОГИ</p>
-				<br/><br/><br/>
-				<p>
-					<small>ваще ИМХО, т.е. совсем ИМХО</small>
-				</p>
-
-			</section>	
-
-			<!-- зачем же FLUX -->			
-			<section>
-				<h2>Отвлеклись, зачем же FLUX???</h2>
-				<p></p>
 			</section>
 
-			<!-- Решаемые задачи -->			
 			<section>
-				<h2>Решаемые задачи</h2>
-				<p>Грамотная работа с данными</p>
-				<br/><br/>
+				<h2>Flux   не   MVC</h2>
+				<p>И лучше избегать сравнений</p>
+			</section>
+
+			<section>
+				<p>Помогает оставаться в рамках функциональных и реактивных идей.</p>
+				<br/>
+				<p>Что в целом хорошо.</p>
+				<br/>
+				<p>Так как все эти MVC и MVP в императивных языках – очень УБОГИ.</p>
+				<br/>
+				<small><p>(ИМХО, ваще ИМХО, т.е. совсем ИМХО)</p></small>
+			</section>
+
+			<!-- Архитектура flux  -->
+			<section>
+				<h2>Flux - паттерн</h2>
+				<img width="55%" data-src="img/Flux.png"/>
+			</section>
+
+			<section>
+				<h2>Поток данных</h2>
 				<p>
-					<small>* данные в ReactJS это все - поведение, изменение, внешний вид</small>
+					<img width="55%" data-src="img/Flux_arrow.png"/>
+				</p>
+				<p>
+					<small>
+						Все данные, а в случае реактивной парадигмы это означает, и события, и действия – распространяются в одном направлении
+					</small>
 				</p>
 			</section>
 
-			<!-- А именно -->			
 			<section>
-				<h2>А именно</h2>
-				<ul>
-					<li>Убираем безумной глубины колбеки, при большой вложенности компонентов</li>
-					<li>Распространяем данные в компоненты на разных ветках и на разных глубинах</li>
-					<li>Выносим пользовательское поведение</li>
-					<li>Получаем хранилище данных</li>
-				</ul>
-			</section>
-			
-			<!-- Картинка -->			
-			<section>
-				<h2>Внимание - трафик</h2>
-				<img width="700px" src="img/flux_simple.png"/>
-			    <aside class="notes">
-			        Картинка примитивная и из нее особо ничего не понятно.
-			        Но можно осознать несколько важных моментов.
-			        1) Все крутится по циклу, без возвратов в обратном направлении. Все - это что? Ну наверно данные, раз уж это React
-			        2) Только из Action - осуществляется взаимодействие с внешним API
-			        3) Квадратик с View - это и есть react компонент
-			        4) Action - это обработчики пользовательских действий, вынесенные из компонента
-			        5) Dispatcher - осуществляет регистрацию событий и вызов подписчиков
-			        6) Store - только хранит данные.
-			    </aside>				
+				<h2>Внешнее API</h2>
+				<p>
+					<img width="55%" data-src="img/Flux_api.png"/>
+				</p>
+				<p>
+					<small>
+						Только Action может общаться с внешним API.
+						<br/>
+						Например: отправлять запросы на сервер.
+					</small>
+				</p>
 			</section>
 
-			<!-- View -->			
-			<section>
-				<h2>View</h2>
-				<p>Список сотрудников с фильтрацией</p>
-				<img width="570px" src="img/userlist.png"></img>
-			</section>
-
-			<!-- Action -->
 			<section>
 				<h2>Action</h2>
-				<ul>
-					<li>Фильтрация списка пользователей - функция</li>
-					<li>Если работает локально - возвращает отфильтрованный список</li>
-					<li>Если обращается на сервер - возвращает Promise</li>
-					<li>По выполнению бросается событие, через Dispatcher</li>
-				</ul>
+				<p>
+					<img width="55%" data-src="img/Flux_action.png"/>
+				</p>
+				<p>
+					<small>
+						Action содержит всю логику.
+						<br/>
+						Только отсюда можно обращаться к внешним API.
+						<br/>
+						Например: Добавить нового сотрудника, фильтровать список сотрудников…
+					</small>
+				</p>
 			</section>
 
-			<!-- Dispatcher -->
 			<section>
 				<h2>Dispatcher</h2>
-				<p>Нужен для централизации всех событий и подписчиков</p>
+				<p>
+					<img width="55%" data-src="img/Flux_dispatcher.png"/>
+				</p>
+				<p>
+					<small>
+						Регистрирует все события о завершении Action.
+						<br/>
+						Позволяет Store подписаться на них
+						<br/>
+						Есть готовые реализации
+					</small>
+				</p>
 			</section>
 
-			<!-- Store -->
 			<section>
 				<h2>Store</h2>
-				<ul>
-					<li>Подписывается на результат выполнения action - "Фильтрация списка пользователей"</li>
-					<li>Сохраняет в себе новый список сотрудников</li>
-					<li>Бросает событие на свое изменение (Не через Dispatcher)</li>
-					<li>Предоставляет API для доступа к данным</li>
-				</ul>
+				<p>
+					<img width="55%" data-src="img/Flux_store.png"/>
+				</p>
+				<p>
+					<small>
+						Содержит модель данных.
+						<br/>
+						Знает как применить результат от Action к модели.
+					</small>
+				</p>
 			</section>
 
-			<!-- View -->			
 			<section>
 				<h2>View</h2>
-				<ul>
-					<li>Подписывается на изменение в Store</li>
-					<li>Запрашивает от Store свое новое состояние</li>
-					<li>Перерисовывается</li>
-				</ul>
+				<p>
+					<img width="55%" data-src="img/Flux_view.png"/>
+				</p>
+				<p>
+					<small>
+						Содержит метод отрисовки данных получаемых из Store.
+						<br/>
+						Срабатывает на изменение Store.
+					</small>
+				</p>
 			</section>
 
-			<!-- Картинка 2 -->			
 			<section>
-				<h2>Картинка 2</h2>
-				<img width="700px" src="img/flux_full.png"></img>
+				<h2>Типовой процесс</h2>
+				<img width="75%" data-src="img/process.png"/>
+				<aside class="notes">
+					Пользователь нажимает кнопку «Удалить сотрудника»
+					React Component отлавливает событие onClick и вызывает Action удаления сотрудника, передав его ID
+					Action отправляет запрос на сервер. Не дожидаясь ответа бросает событие через Dispatcher передав туда Promise (можно синхронно без Promise).
+					Dispatcher дожидается срабатывания Promise и вызывает всех подписчиков на этот Action, передав в качестве параметра значения возвращенные Promise.
+					Store обновляет свое состояние, на основе пришедших ему данных. Бросает событие change (не через диспатчер). Других событий у Store нет и параметров у этого события нет.
+					Все заинтересованные Компоненты получают событие об изменении Store и начинают свою перерисовку.
+					Всё. Надо отметить что Store которые получают событие от Action может быть много, так же как и Компонентов подписанных на изменение Store.
+				</aside>
 			</section>
-			<!--Готовые реализации-->
+
 			<section>
 				<h2>Готовые реализации</h2>
 				<ul>
 					<li>Dispatcher от facebook + microevent.js + vanilla.js</li>
 					<li>yahoo/fluxible</li>
 					<li>refluxjs</li>
-					<li><strong>flummox</strong></li>
-				</ul>
-			</section>
-
-			<!--Пример на Flummox-->
-			<section>
-				<h2>Пример на Flummox</h2>
-				Есть три компонента:
-				<ul>
-					<li>Список сотрудников</li>
-					<li>Отображалка кол-ва выводимых сотрудников</li>
-					<li>Фильтр</li>
+					<li><b>flummox</b></li>
 				</ul>
 			</section>
 
 			<section>
-				<h2>Примерно так</h2>
-				<img width="900px" src="img/view.png"></img>
+				<h2>На примере Flummox</h2>
+				<img> width="900px" src="img/view.png"/>
 			</section>
 
-			<!--Слайд с демонстрашуой-->
+			<!--Слайд с демонстрацией-->
 			<section data-state="demoslide">
 				<iframe src="src/index.html" width="100%" height="500px">
 				</iframe>
@@ -255,18 +362,19 @@
 			<section>
 				<h2>Action</h2>
 				Зададим все пользовательские действия:
-				<pre><code class="javascript" data-trim contenteditable style="font-size: 22px;">
+				<!-- <code contenteditable ...-->
+				<pre><code class="javascript" data-trim style="font-size: 22px;">
 import { Actions } from 'flummox';
 class ActionEmployee extends Actions {
-	filter(filter){
-		return ... Можно вернуть значения или Promise
-	}
-	loadEmployee(id){
-		return ... Можно вернуть значения или Promise
-	}
-	saveEmployee(employee){
-		return ... Можно вернуть значения или Promise
-	}
+    filter(filter){
+        return ... Можно вернуть значения или Promise
+    }
+    loadEmployee(id){
+        return ... Можно вернуть значения или Promise
+    }
+    saveEmployee(employee){
+        return ... Можно вернуть значения или Promise
+    }
 }
 				</code></pre>
 			</section>
@@ -274,137 +382,369 @@ class ActionEmployee extends Actions {
 			<!--Store-->
 			<section>
 				<h2>Store</h2>
-				Зададим все пользовательские действия:
-				<pre><code class="javascript" data-trim contenteditable style="font-size: 22px;">
+				Перехватим пользовательские действия:
+				<pre><code class="javascript" data-trim style="font-size: 22px;">
 import { Store } from 'flummox';
 class StoreEmployee extends Store {
-	constructor(flux) {
-		super();
-		const actions = flux.getActions('action');
-		this.register(actions.filter, this.handleFilter);
-		this.state = { employees : [] };
-	}
-	handleFilter(message) {
-		console.log("handleFilter", message);
-		this.setState({
-			employees : message
-		});
-	}
+    constructor(flux) {
+        super();
+        const actions = flux.getActions('action');
+        this.register(actions.filter, this.handleFilter);
+        this.state = { employees : [] };
+    }
+    handleFilter(message) {
+        console.log("handleFilter", message);
+        this.setState({
+            employees : message
+        });
+    }
 }
-				</code></pre>
+                </code></pre>
 			</section>
 
 			<!--Инициализация Flux-->
 			<section>
 				<h2>Инициализация Flux</h2>
-				<pre><code class="javascript" data-trim contenteditable style="font-size: 22px;">
+				<pre><code class="javascript" data-trim style="font-size: 22px;">
 import {Flux}  from 'flummox';
 import FluxComponent from 'flummox/component';
 import ActionEmployee from "./Action.jsx";
 import ApplicationStore from "./Store.jsx";
+
 class ApplicationFlux extends Flux {
-	constructor() {
-	    super();
-	    this.createActions('action', ActionEmployee);
-	    this.createStore('store', ApplicationStore, this);
-	}
+    constructor() {
+        super();
+        this.createActions('action', ActionEmployee);
+        this.createStore('store', ApplicationStore, this);
+    }
 }
 				</code></pre>
 			</section>
 
 			<!--Обертка Flux-->
 			<section>
-				<h2>Обертка</h2>
+				<h2>Приложение</h2>
 				<pre><code data-trim contenteditable style="font-size: 22px;">
 import React from 'react';
 import FluxComponent from 'flummox/component';
 import flux from './app.jsx'
-class View extends React.Component {
-  render() {return ( 
-    <div>    
-      &lt;FluxComponent  flux={flux} connectToStores={['store']}>
-        &lt;ViewEmployeeCounter/&gt;
-      &lt;/FluxComponent>
+class ApplicationView extends React.Component {
+    render() {return (
+    <div>
+        &lt;FluxComponent  flux={flux} connectToStores={['store']}>
+           &lt;ViewEmployeeCounter/&gt;
+        &lt;/FluxComponent>
 
-      &lt;FluxComponent  flux={flux} connectToStores={['store']}>
-        &lt;ViewEmployeesFilter/>
-        &lt;ViewEmployees/>
-      &lt;/FluxComponent>
+        &lt;FluxComponent  flux={flux} connectToStores={['store']}>
+           &lt;ViewEmployeesFilter/>
+           &lt;ViewEmployees/>
+        &lt;/FluxComponent>
     </div>);}
 }
-				</code></pre>
+                </code></pre>
 			</section>
 
 			<!--Список пользователей View-->
 			<section>
-				<h2>Список пользователей</h2>
-				<pre><code data-trim contenteditable style="font-size: 22px;">
+				<h3>Компонент - список пользователей</h3>
+				<pre><code data-trim style="font-size: 22px;">
 import React from 'react';
 var ViewEmployees = React.createClass({
-  load  : function(){ 
-  	this.props.flux.getActions('action').filter(); 
-  },
-  render: function() {
-    var emps = this.props.employees.map(function(item){ 
-      return(&lt;div key={item.uuid}> {item.name} &lt;/div>) 
-    });
-    return (
-      &lt;div className="grid">
-        &lt;div onClick={this.load}>Показать Сотрудников&lt;/div>
-        {emps}
-      &lt;/div>)
-  }
- ...
+    load  : function(){
+        this.props.flux.getActions('action').filter();
+    },
+    render: function() {
+        var emps = this.props.employees.map(function(item){
+            return(&lt;div key={item.uuid}> {item.name} &lt;/div>)
+        });
+        return (
+            &lt;div className="grid">
+              &lt;div onClick={this.load}>Показать Сотрудников&lt;/div>
+              {emps}
+            &lt;/div>)
+    }
+...
 				</code></pre>
 			</section>
 
 			<!--количество выводимых сейчас пользователей-->
 			<section>
-				<h2>Количество сотрудников</h2>
-				<pre><code data-trim contenteditable style="font-size: 22px;">
+				<h2>Компонент - количество сотрудников</h2>
+				<pre><code data-trim style="font-size: 22px;">
 var ViewEmployeeCounter = React.createClass({
-  render: function() {
-    console.log("ViewEmployeeCounter");
-    return (
-      <div> 
-        &lt;span>{this.props.employees.length}&lt;/span>
-      </div>
-    );
-  }
+    render: function() {
+        console.log("ViewEmployeeCounter");
+        return (
+        <div>
+            &lt;span>{this.props.employees.length}&lt;/span>
+        </div>
+        );
+    }
 })
-				</code></pre>
+                </code></pre>
 			</section>
 
 			<!--Фильтр-->
 			<section>
 				<h2>Фильтр</h2>
-				<pre><code data-trim contenteditable style="font-size: 22px;">
+				<pre><code data-trim style="font-size: 22px;">
 var ViewEmployeesFilter = React.createClass({
-  keyPress: function(event) {
-  if(event.keyCode == 13)
-      this.props.flux.getActions('action')
-          .filter({text: event.target.value});
-  },
-  render: function() {
-    console.log("ViewEmployeesFilter");
-    return (
-        <div>
-            <span>Фильтр:</span>
-            &lt;input type="text" onKeyUp={this.keyPress}/> 
-        </div>
-    );
-  }...
+    keyPress: function(event) {
+        if(event.keyCode == 13)
+            this.props.flux.getActions('action')
+                .filter({text: event.target.value});
+    },
 
-				</code></pre>
+    render: function() {
+        console.log("ViewEmployeesFilter");
+        return (
+            <div>
+                <span>Фильтр:</span>
+                &lt;input type="text" onKeyUp={this.keyPress}/>
+            </div>
+    );
+}...
+                </code></pre>
 			</section>
 
 			<!-- Развитие -->
 			<section>
 				<h2>Литература</h2>
 				<p>
-					Flux для глупых людей - http://habrahabr.ru/post/249279/ </li>
+					Flux для глупых людей - http://habrahabr.ru/post/249279/
 				</p>
 				<p><small>более чем достаточно</small></p>
+			</section>
+
+			<!-- Развитие - Redux -->
+			<section>
+				<h2>github.com/rackt/redux</h2>
+				<ul>
+					<li> Сильно переосмысленная реализация Flux </li>
+					<li> «Кроссплатформенная» - не требует react </li>
+					<li> Store – один, имутабельный </li>
+					<li> Изменение в Store делаются через функцию reducer </li>
+					<li> Action -  по сути без изменений </li>
+					<li> View - разделен на два Smart (FluxComponent) и Dummy (View)</li>
+					<li> Всё есть функция высшего порядка</li>
+					<li> + + + </li>
+				</ul>
+				<aside class="notes">
+					Зачем самому реализовывать Smart компонент - по видимому,
+					показалось недостаточно гибкостьи задавать маппинг метаописание,
+					хочется иметь возможность вмешаться кодом.
+
+					Но это что касается концептуального отличия, сама реализация же намного функциональнее и гибче.
+				</aside>
+			</section>
+
+			<section>
+				<h2>Немного вкусняшек</h2>
+				<img width="80%" data-src="img/tasty.jpg"/>
+			</section>
+
+			<section>
+				<h3>Реактивность и функциональность</h3>
+				<ul>
+					<li> React и Flux – сами сильно пропитаны функциональными и реактивными идеями, а это дает возможность развивать их в этом направлении.</li>
+					<br/>
+					<li> Что сильно облегчает разработку именно UI  и особенно под веб.</li>
+					<br/>
+					<li> Такие вещи как immutable коллекции, чистые функции  т.д.</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Колбеки</h3>
+				<ul>
+					<li> Древовидная структура приложения или компонента на reactJS, заставляет передавать множество колбеков. </li>
+					<br/>
+					<li> Что доставляет много неприятностей. </li>
+					<br/>
+					<li> Flux полностью избавляет от callback, создавая однонаправленное движение данных и событий. </li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Лог всех действий</h3>
+				<ul>
+					<li> Все действия осуществляются через Action. </li>
+					<br/>
+					<li> Action – функция с определенными входными и выходными параметрами. </li>
+					<br/>
+					<li> Можно осуществить логирования параметров. </li>
+					<br/>
+					<li> Легко повторить ошибку получив лог от тестера. </li>
+					<br/>
+					<li> Фича - воспроизведение действий пользователя, например в графическом редакторе https://precursorapp.com </li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Сохранение состояния</h3>
+				<ul>
+					<li> В любой момент можем сохранить все Store.
+						<br/>Восстановив их продолжить работу с системой. </li>
+					<br/>
+					<li> Если использовать immutable структуры данных в Store, то получим еще и историю изменения с возможностью отката, которую тоже можно сохранить/восстановиться. </li>
+					<br/>
+					<li> Redux в этом плане может помочь. </li>
+					<br/>
+					<li> Векторный редактор http://tonsky.me/vec/. </li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Оптимистичный рендеринг</h3>
+				<ul>
+					<li> Превью – спекулятивный рендеринг </li>
+					<br/>
+					<li> Пока сервер обрабатывает запрос, можем поменять модель данных. Перерисовав интерфейс. </li>
+					<br/>
+					<li> После получения ответа от сервера, поменять данные в Store и перерисовать снова. </li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Обновление на горячую</h3>
+				<ul>
+					<li> Action – “чистые” функции, не зависят от окружения. </li>
+					<br/>
+					<li> View – чистые компоненты не зависят от кружения. </li>
+					<br/>
+					<li> Store – можем сериализовать все состояние системы. </li>
+					<br/>
+					<li> Поэтому бизнес логику и логику визуализации легко обновлять на горячую. </li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Оптимизация отрисовки</h3>
+				<ul>
+					<li> Если в Store использовать immutable коллекции, то «бесплатно» получаем ленивый рендеринг. </li>
+					<br/>
+					<li> Отказаться от отрисовки дерева, сравнив данные по ссылке. </li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Вменяемый ОО синтаксис</h3>
+				<ul>
+					<li> Не смотря на свою функциональную природу reactJS и Flux имеют очень даже объектное представление. </li>
+					<br/>
+					<li> Что упрощает обучение сотрудников. </li>
+					<br/>
+					<li> Используются функциональные и реактивные принципы, которые удачно скрываются от junior разработчиков. </li>
+					<br/>
+					<li> Это хорошо. Все-таки чистые функциональные языки в промышленной разработке как-то не очень прижились. </li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Готовое архитектурное решение</h3>
+				<p>Разделяет: </p>
+				<ul>
+					<li>данные,</li>
+					<li>бизнес логику, </li>
+					<li>отрисовку.</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Облегчение тестирования</h3>
+				<p>
+				Поскольку изначально архитектура заставляет разделить логику, данные и отрисовку:
+				</p>
+				<ul>
+					<li> Легко начать писать тесты, даже если на этапе стартапа этого не делали</li>
+				</ul>
+			</section>
+
+
+			<!-- немного философии -->
+			<section>
+				<h3>Немного философии</h3>
+				<p>
+					Почему react и flux это хорошо?
+				</p>
+			</section>
+
+			<section>
+				<p>Почему философии?</p>
+				<p>
+					Сравнения всегда лукавы!
+				</p>
+			</section>
+
+			<section>
+				<h3>Ощущения при создании UI</h3>
+				<p>Да библиотеки вроде мощные, сделать можно все.</p>
+				<p>Но как будто кирпичи на стройке носишь, устаешь жутко.</p>
+				<p>Постоянное недовольство от процесса.</p>
+				<p>А под Web – двойное недовольствие.</p>
+			</section>
+
+			<section>
+				<h3>Часто задаваемый вопрос новичка</h3>
+				<ul>
+					<li>А что на счет производительности у react?</li>
+					</br>
+					<li>Не правильный вопрос!</li>
+					</br>
+					<li>Правильно – а что на счет производительность у меня?</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Ищу чего-то</h3>
+				<ul>
+					<li>И вот ищешь постоянно какую-то серебряную пулю.</li>
+					</br>
+					<li>Хотя бы библиотеку которую с удовольствием возьмешь для проекта с нуля</li>
+					</br>
+					<li>Но нет таких</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>И вот react</h3>
+				<img width="65%" data-src="img/maniac.jpg"/>
+				<p>Будто на самолет сел :)</p>
+			</section>
+
+			<section>
+				<h3>Что мы ждем от технологии</h3>
+				<p>Требование к технологии – увеличение производительности программиста желательно здесь и сейчас, а так же в среднесрочной и долгосрочной перспективе</p>
+				<ul>
+					<li>т.е. быстрый старт</li>
+					<li>отсутствие функциональных ограничений в обозримом будущем</li>
+					<li>перспективы развития</li>
+					<li>надежность производителя</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Готовое архитектурное решение</h3>
+				<p>Позволяет разделить</p>
+				<ul>
+					<li>данные,</li>
+					<li>бизнес логику,</li>
+					<li>отрисовку</li>
+				</ul>
+				<p>
+				А значит берем джуниоров, говорим: делай раз, делай два, делай три
+				</p>
+			</section>
+
+			<section>
+				<h3>Легкий переход</h3>
+				<p>Проекты на react легко переводить. Бенефиты идут сразу. Можно разрабатывать как маленькие компоненты, так и целые сайты. Все ложится хорошо.</p>
+			</section>
+
+			<section>
+				<h3>Никаких сравнений</h3>
+				<p>Просто с react реально прёт!</p>
+				<img width="65%" data-src="img/dog.jpg"/>
 			</section>
 
 			<!-- Развитие -->
